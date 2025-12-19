@@ -1,0 +1,19 @@
+# FastAPI & Web
+fastapi
+uvicorn
+starlette
+pydantic
+
+# Database
+SQLAlchemy
+
+# Payment Integration
+paytechuz
+
+# Telegram Bot
+aiogram>=3.0.0
+
+# Utils
+environs
+python-dotenv
+requests
