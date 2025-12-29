@@ -29,9 +29,6 @@ def get_payment_methods_keyboard(amount: int, tariff: str) -> InlineKeyboardMark
         InlineKeyboardButton(text="💳 Click", callback_data=f"pay:{amount}:click:{tariff}")
     )
     builder.row(
-        InlineKeyboardButton(text="💳 Atmos", callback_data=f"pay:{amount}:atmos:{tariff}")
-    )
-    builder.row(
         InlineKeyboardButton(text="❌ Bekor qilish", callback_data="cancel")
     )
     

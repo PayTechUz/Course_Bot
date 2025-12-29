@@ -2,7 +2,7 @@
 
 Ushbu loyiha **PayTechUZ** kutubxonasi yordamida Telegram bot orqali to'lovlarni qabul qilish va obuna (subscription) tizimini qanday tashkil etish mumkinligini ko'rsatib beradi.
 
-Bot orqali foydalanuvchilar maxsus video darsliklar va kurslarga kirish huquqini sotib olishlari mumkin. To'lovlar **Payme**, **Click** va **Atmos** tizimlari orqali avtomatlashtirilgan.
+Bot orqali foydalanuvchilar maxsus video darsliklar va kurslarga kirish huquqini sotib olishlari mumkin. To'lovlar **Payme** va **Click** tizimlari orqali avtomatlashtirilgan.
 
 ## ✨ Imkoniyatlar
 
@@ -33,7 +33,7 @@ cp .env.example .env
 
 `.env` faylida quyidagi ma'lumotlar bo'lishi kerak:
 *   `BOT_TOKEN`: Telegram bot tokeni.
-*   Merchant ID va kalitlari (Payme, Click, Atmos uchun).
+*   Merchant ID va kalitlari (Payme, Click uchun).
 
 ### 3. Dasturni ishga tushirish
 

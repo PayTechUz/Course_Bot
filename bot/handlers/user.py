@@ -92,13 +92,7 @@ async def create_payment_link(callback: CallbackQuery):
                 amount=amount,
                 return_url=f"https://t.me/{bot_username}"
             )
-        elif method == "atmos":
-            result = gateway.create_payment(
-                account_id=str(payment.id),
-                amount=amount * 100
-            )
-            payment_link = result.get("payment_url")
-            
+
         if payment_link:
             await callback.message.edit_text(
                 f"💳 <b>To'lov #{payment.id}</b>\n"

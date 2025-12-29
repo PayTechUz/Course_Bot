@@ -2,7 +2,6 @@ import json
 from fastapi import APIRouter, Request, Depends, BackgroundTasks
 from sqlalchemy.orm import Session
 from paytechuz.integrations.fastapi import PaymeWebhookHandler, ClickWebhookHandler
-from paytechuz.gateways.atmos.webhook import AtmosWebhookHandler
 
 from bot import config
 from bot.database import get_db, Payment, complete_payment, cancel_payment, get_payment
@@ -85,20 +84,3 @@ async def click_webhook(request: Request, background_tasks: BackgroundTasks, db:
     )
     handler.background_tasks = background_tasks
     return await handler.handle_webhook(request)
-
-
-@router.post("/atmos/webhook/")
-async def atmos_webhook(request: Request, background_tasks: BackgroundTasks):
-    handler = AtmosWebhookHandler(
-        api_key=config.ATMOS_API_KEY
-    )
-    try:
-        data = json.loads(await request.body())
-        response = handler.handle_webhook(data)
-        if response["status"] == 1:
-            invoice_id = int(data.get("invoice"))
-            complete_payment(invoice_id)
-            background_tasks.add_task(send_success_notification, invoice_id)
-        return response
-    except Exception as e:
-        return {"status": 0, "message": str(e)}

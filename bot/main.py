@@ -54,5 +54,5 @@ def root():
         "status": "ok", 
         "mode": "webhook",
         "bot": "active", 
-        "payments": ["payme", "click", "atmos"]
+        "payments": ["payme", "click",]
     }
